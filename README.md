@@ -6,9 +6,6 @@ A set of dotfiles to debian based distros and fedora.
 ## Common Packages
 A couple of packages are common to both distro dotfiles, are:
 
-**Shell**
-- Fish
-
 **Code Editors**
 - NeoVim
 - VSCodium
@@ -16,19 +13,24 @@ A couple of packages are common to both distro dotfiles, are:
 **Browsers**
 - Lynx
 - Chrome
-- Firefox
 
 **Communication**
 - Mull
 
-**Other**
-- NodeJS
+**Others**
+- Yarn
+- Xclip
 - Docker
+- NodeJS
 - Neofetch
 - Nerd Fonts
 
 ### Debian Exclusive
 - Signal
+- Zshell + Plugins
+
+### Fedora Exclusive
+- Fish
 
 ## Installation
 It will be added soon.

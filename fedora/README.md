@@ -16,14 +16,15 @@ A couple of packages are common to both distro dotfiles, are:
 **Browsers**
 - Lynx
 - Chrome
-- Firefox
 
 **Communication**
 - Mull
 
 **Other**
-- NodeJS
+- Yarn
+- Xclip
 - Docker
+- NodeJS
 - Neofetch
 - Nerd Fonts
 

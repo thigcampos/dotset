@@ -7,7 +7,7 @@ A set of dotfiles to Fedora.
 A couple of packages are common to both distro dotfiles, are:
 
 **Shell**
-- Fish
+- ZShell + Plugins
 
 **Code Editors**
 - NeoVim
@@ -16,14 +16,15 @@ A couple of packages are common to both distro dotfiles, are:
 **Browsers**
 - Lynx
 - Chrome
-- Firefox
 
 **Communication**
 - Mull
 
 **Other**
-- NodeJS
+- Yarn
+- Xclip
 - Docker
+- NodeJS
 - Neofetch
 - Nerd Fonts
 
