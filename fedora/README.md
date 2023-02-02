@@ -8,9 +8,9 @@ A couple of packages are common to both distro dotfiles, are:
 
 **Shell**
 - Fish
-
+ 
 **Code Editors**
-- NeoVim
+- NeoVim 
 - VSCodium
 
 **Browsers**
@@ -21,12 +21,11 @@ A couple of packages are common to both distro dotfiles, are:
 - Mull
 
 **Other**
-- Yarn
-- Xclip
-- Docker
-- NodeJS
-- Neofetch
-- Nerd Fonts
+- Node 
+- Yarn 
+- Xclip 
+- Docker 
+- Neofetch  
 
 ## Installation
 It will be added soon.
