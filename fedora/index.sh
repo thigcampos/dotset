@@ -22,7 +22,5 @@ chsh -s /usr/bin/fish &&
 # Neofetch
 sudo dnf install -y neofetch &&
 
-
-
 # Move nvim folder to .config 
 mv -f nvim ~/.config &&

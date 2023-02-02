@@ -1,9 +1,9 @@
-# Debian Dotfiles
+# Dotfiles
 ###### par gaztea
 
-A set of dotfiles to Fedora. 
+A set of dotfiles to debian based distros and fedora. 
 
-## Packages
+## Common Packages
 A couple of packages are common to both distro dotfiles, are:
 
 **Shell**
@@ -27,8 +27,14 @@ A couple of packages are common to both distro dotfiles, are:
 - Neofetch
 - Nerd Fonts
 
+### Debian Exclusive
+- Signal
+
 ## Installation
 It will be added soon.
 
-## Issues
-You can ask for new packages and bug fixes in our [issues tab](https://github.com/allogaztea/dotfiles/issues).
+## Test
+Distro tested:
+- [ ] Fedora
+- [ ] Ubuntu
+- [ ] PopOS
