@@ -1,10 +1,10 @@
 # Dotfiles
-###### par gaztea
+###### par garzea
 
-A set of dotfiles to debian based distros and fedora. 
+A set of dotfiles to fedora. 
 
-## Common Packages
-A couple of packages are common to both distro dotfiles, are:
+## Packages
+List of packages installed
 
 **Code Editors**
 - NeoVim
@@ -18,6 +18,7 @@ A couple of packages are common to both distro dotfiles, are:
 - Mull
 
 **Others**
+- Fish
 - Yarn
 - Xclip
 - Docker
@@ -25,18 +26,12 @@ A couple of packages are common to both distro dotfiles, are:
 - Neofetch
 - Nerd Fonts
 
-### Debian Exclusive
-- Signal
-- Zshell + Plugins
-
-### Fedora Exclusive
-- Fish
-
 ## Installation
-It will be added soon.
-
-## Test
-Distro tested:
-- [ ] Fedora
-- [ ] Ubuntu
-- [ ] PopOS
+To get started, clone this project on your machine, by running:
+```sh
+git clone https://github.com/allogarzea/dotfiles.git ~/Downloads/Dotfiles
+```
+Then you'll be able to run the ```dotfiles.sh``` file:
+```sh
+cd ~/Downloads/Dotfiles && ./dotfiles.sh
+```
