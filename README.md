@@ -25,9 +25,15 @@ List of packages installed
 ## Installation
 To get started, clone this project on your machine, by running:
 ```sh
-git clone https://gitlab.com/thigcampos/dotfiles.git ~/Downloads && chmod u+x ~/Downloads/dotfiles/dotfiles.sh
+git clone https://gitlab.com/thigcampos/dotfiles.git ~/Downloads
 ```
+
+Give ```dotfiles.sh``` execution permission:
+```sh
+chmod u+x ~/Downloads/dotfiles/dotfiles.sh
+```
+
 Then you'll be able to run the ```dotfiles.sh``` file:
 ```sh
-cd ~/Downloads/Dotfiles && ./dotfiles.sh
+cd ~/Downloads/dotfiles && ./dotfiles.sh
 ```
