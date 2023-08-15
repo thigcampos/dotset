@@ -1,5 +1,5 @@
 # Dotfiles
-###### par garzea
+###### par thiago
 
 A set of dotfiles to fedora. 
 
@@ -11,11 +11,8 @@ List of packages installed
 - VSCodium
 
 **Browsers**
-- Lynx
+- Firefox
 - Chrome
-
-**Communication**
-- Mull
 
 **Others**
 - Fish
@@ -24,12 +21,11 @@ List of packages installed
 - Docker
 - NodeJS
 - Neofetch
-- Nerd Fonts
 
 ## Installation
 To get started, clone this project on your machine, by running:
 ```sh
-git clone https://github.com/allogarzea/dotfiles.git ~/Downloads/Dotfiles
+git clone https://gitlab.com/thigcampos/dotfiles.git ~/Downloads && chmod u+x ~/Downloads/dotfiles/dotfiles.sh
 ```
 Then you'll be able to run the ```dotfiles.sh``` file:
 ```sh
