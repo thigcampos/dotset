@@ -10,16 +10,22 @@ List of packages installed
 - NeoVim
 - VSCodium
 
-**Browsers**
-- Firefox
-- Chrome
+**Rust Commands**
+- Bat
+- Exa
+- Procs
+- Ripgrep
+- Fd-find
+- Tealdeer
+
+** Development Tools**
+- Yarn
+- Node
+- Docker
 
 **Others**
 - Fish
-- Yarn
 - Xclip
-- Docker
-- NodeJS
 - Neofetch
 
 ## Installation
