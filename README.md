@@ -1,10 +1,13 @@
 # Dotfiles
 ###### par thiago
 
-A set of dotfiles to fedora. 
+Easily install development-focused and utilities for Fedora. 
 
 ## Packages
 List of packages installed
+
+**Browsers**
+- Firefox
 
 **Code Editors**
 - NeoVim
@@ -21,12 +24,17 @@ List of packages installed
 ** Development Tools**
 - Yarn
 - Node
+- Java
+- Rust (Soon)
 - Docker
 
 **Others**
 - Fish
 - Xclip
+- Feeds
+- Signal
 - Neofetch
+- Heroic Games
 
 ## Installation
 To get started, clone this project on your machine, by running:

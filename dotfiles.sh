@@ -1,3 +1,15 @@
+# Initial
+sudo dnf update -y
+sudo dnf upgrade -y --refresh
+sudo dnf remove -y firefox
+# Removing default Firefox to then add suport for DRM content
+
+# Rust
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Java
+sudo dnf install java-latest-openjdk-devel.x86_64
+
 # Rust Commands
 sudo dnf install -y exa tealdeer procs ripgrep bat fd-find
 echo 'All Rust Commmands Installed'
@@ -61,4 +73,5 @@ echo 'Feeds Installed'
 flatpak install -y flathub com.heroicgameslauncher.hgl
 echo 'Heroic Games Installed'
 
+sudo dnf update -y && sudo dnf upgrade -y
 echo 'Done'
