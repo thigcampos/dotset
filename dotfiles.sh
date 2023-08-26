@@ -41,4 +41,24 @@ echo 'Neovim Installed'
 sudo dnf install -y neofetch
 echo 'Neofetch Installed'
 
+# RPM Fusion
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+echo 'RPM Fusion Installed'
+
+# Firefox
+flatpak install -y flathub org.mozilla.firefox
+echo 'Firefox Installed'
+
+# Signal
+flatpak install -y flathub org.signal.Signal
+echo 'Signal Installed'
+
+# Feeds
+flatpak install -y flathub org.gabmus.gfeeds
+echo 'Feeds Installed'
+
+# Heroic Games
+flatpak install -y flathub com.heroicgameslauncher.hgl
+echo 'Heroic Games Installed'
+
 echo 'Done'
