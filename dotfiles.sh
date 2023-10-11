@@ -5,10 +5,12 @@ sudo dnf remove -y firefox
 # Removing default Firefox to then add suport for DRM content
 
 # Rust
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo 'Rust Installed'
 
 # Java
 sudo dnf install java-latest-openjdk-devel.x86_64
+echo 'Java Installed'
 
 # Rust Commands
 sudo dnf install -y exa tealdeer procs ripgrep bat fd-find
