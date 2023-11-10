@@ -30,12 +30,12 @@ text_message() {
 
 full_install() {
     echo "Performing full installation..."
-    ./fullInstall.sh
+    ./full_install.sh
 }
 
 custom_install() {
     echo "Performing custom installation..."
-    ./customInstall.sh
+    ./custom_install.sh
 }
 
 choose_install() {
