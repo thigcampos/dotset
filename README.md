@@ -1,4 +1,17 @@
 # DotSet: Streamlined Dotfiles Installation
+```sh
+        _            _          _          _            _          _      
+       /\ \         /\ \       /\ \       / /\         /\ \       /\ \    
+      /  \ \____   /  \ \      \_\ \     / /  \       /  \ \      \_\ \   
+     / /\ \_____\ / /\ \ \     /\__ \   / / /\ \__   / /\ \ \     /\__ \  
+    / / /\/___  // / /\ \ \   / /_ \ \ / / /\ \___\ / / /\ \_\   / /_ \ \ 
+   / / /   / / // / /  \ \_\ / / /\ \ \\ \ \ \/___// /_/_ \/_/  / / /\ \ \
+  / / /   / / // / /   / / // / /  \/_/ \ \ \     / /____/\    / / /  \/_/
+ / / /   / / // / /   / / // / /    _    \ \ \   / /\____\/   / / /       
+ \ \ \__/ / // / /___/ / // / /    /_/\__/ / /  / / /______  / / /        
+  \ \___\/ // / /____\/ //_/ /     \ \/___/ /  / / /_______\/_/ /         
+   \/_____/ \/_________/ \_\/       \_____\/   \/__________/\_\/           
+```
 
 DotSet is a set of dotfiles designed to simplify the installation and configuration of essential applications and personalized settings for Debian, Arch, and RedHat systems.
 
