@@ -13,7 +13,7 @@ sudo dnf install java-latest-openjdk-devel.x86_64
 echo 'Java Installed'
 
 # Rust Commands
-sudo dnf install -y exa tealdeer procs ripgrep bat fd-find
+sudo dnf install -y tealdeer procs ripgrep bat fd-find
 echo 'All Rust Commmands Installed'
 
 # Fish
