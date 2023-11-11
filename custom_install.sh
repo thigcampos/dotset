@@ -8,9 +8,9 @@ check_command() {
 
 get_package_manager() {
     declare -A osInfo;
-    osInfo[/etc/redhat-release]="dnf install"
-    osInfo[/etc/arch-release]="pacman -S"
-    osInfo[/etc/debian_version]="apt-get install"
+    osInfo[/etc/redhat-release]="dnf"
+    osInfo[/etc/arch-release]="pacman"
+    osInfo[/etc/debian_version]="apt-get"
 
     for f in ${!osInfo[@]}
     do
@@ -19,6 +19,67 @@ get_package_manager() {
         fi
     done
 }
+
+PKGMAN=$(get_package_manager)
+
+get_pkgman_install() {
+    case $PKGMAN in
+        "dnf")
+            command="$PKGMAN install"
+            ;;
+        "pacman")
+            command="$PKGMAN -S"
+            ;;
+        "apt-get")
+            command="$PKGMAN install"
+            ;;
+        *)
+            command="$PKGMAN install"
+            ;;
+    esac
+
+    echo "$command"
+}
+
+
+get_pkgman_update() {
+    case $PKGMAN in
+        "dnf")
+            command="$PKGMAN update"
+            ;;
+        "pacman")
+            command="$PKGMAN -Syu"
+            ;;
+        "apt-get")
+            command="$PKGMAN update"
+            ;;
+        *)
+            command="$PKGMAN update"
+            ;;
+    esac
+
+    echo "$command"
+}
+
+get_pkgman_upgrade() {
+    case $PKGMAN in
+        "dnf")
+            command="$PKGMAN upgrade --refresh"
+            ;;
+        "pacman")
+            command="$PKGMAN -Syu"
+            ;;
+        "apt-get")
+            command="$PKGMAN upgrade"
+            ;;
+        *)
+            command="$PKGMAN upgrade"
+            ;;
+    esac
+
+    echo "$command"
+}
+
 
 get_flatpak_preference() {
     read -p "Do you agree to use it [y/N]: " choice
@@ -47,14 +108,19 @@ echo -e "\e[0;32mCustom Install - Preferences\e[0m"
 echo "To install some applications is necessary to use Flatpak."
 FLATPAK_PREFERENCE=$(get_flatpak_preference)
 
-PKGMAN=$(get_package_manager)
 
 ### INSTALL COMMANDS
 
+PKG_INSTALL=$(get_pkgman_install)
+PKG_UPDATE=$(get_pkgman_update)
+PKG_UPGRADE=$(get_pkgman_upgrade)
+
+
 update_system() {
-    sudo dnf update -y
-    sudo dnf upgrade -y --refresh
-    sudo dnf autoremove
+    echo $PKG_UPDATE
+    echo $PKG_UPGRADE
+    sudo $PKG_UPDATE
+    sudo $PKG_UPGRADE
     echo 'System Updated'
 }
 
@@ -64,13 +130,13 @@ install_rust() {
 }
 
 install_rust_commands() {
-    sudo $PKGMAN -y tealdeer procs ripgrep bat fd-find
+    sudo $PKG_INSTALL -y tealdeer procs ripgrep bat fd-find
     echo 'All Rust Commmands Installed'
 }
 
 install_fish() {
-    sudo $PKGMAN -y fish
-    sudo $PKGMAN -y util-linux-user
+    sudo $PKG_INSTALL -y fish
+    sudo $PKG_INSTALL -y util-linux-user
     chsh -s /usr/bin/fish
     echo 'Fish Installed'    
 }
@@ -78,23 +144,23 @@ install_fish() {
 install_vscodium() {
     sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
     printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
-    sudo $PKGMAN -y codium 
+    sudo $PKG_INSTALL -y codium 
     echo 'VSCodium Installed'
 }
 
 install_neovim() {
-    sudo $PKGMAN -y neovim python3-neovim
+    sudo $PKG_INSTALL -y neovim python3-neovim
     cd ~/.config
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     git clone https://gitlab.com/garzea/nvim.git
-    sudo $PKGMAN -y gcc
+    sudo $PKG_INSTALL -y gcc
     echo "Neovim Installed"
     echo "To apply all neovim configs, access ~/.config/nvim/lua/neovim/packer.lua and run :source and :PackerSync"
 }
 
 install_node() {
-    sudo $PKGMAN -y nodejs
+    sudo $PKG_INSTALL -y nodejs
     echo 'NodeJS Installed'
 }
 
@@ -104,22 +170,22 @@ install_yarn() {
 }
 
 install_xclip() {
-    sudo $PKGMAN -y xclip
+    sudo $PKG_INSTALL -y xclip
     echo 'Xclip Installed'
 }
 
 install_neofetch() {
-    sudo $PKGMAN -y neofetch
+    sudo $PKG_INSTALL -y neofetch
     echo 'Neofetch Installed'
 }
 
 install_rpm_fusion() {
-    sudo $PKGMAN https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    sudo $PKG_INSTALL https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     echo 'RPM Fusion Installed'
 }
 
 install_flatpak() {
-    sudo $PKGMAN flatpak
+    sudo $PKG_INSTALL flatpak
     echo 'Flatpak Installed'
 }
 
@@ -160,8 +226,12 @@ then
     applications_list+=("signal")  
 fi
 
+echo ""
+update_system
 for f in ${!applications_list[@]}
 do
     echo ""
     confirm_install ${applications_list[$f]} install_${applications_list[$f]}
 done
+echo ""
+update_system
