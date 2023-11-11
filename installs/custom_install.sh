@@ -1,7 +1,8 @@
 #!/bin/bash
 
-### UTILS
+# Custom Install
 
+## Utils
 check_command() {
     command -v "$1" > /dev/null 2>&1
 }
@@ -40,7 +41,6 @@ get_pkgman_install() {
 
     echo "$command"
 }
-
 
 get_pkgman_update() {
     case $PKGMAN in
@@ -199,7 +199,7 @@ install_signal() {
     echo 'Signal Installed'
 }
 
-### RUN INSTALL
+## Prepare Install
 declare -a applications_list=(\
     "rust"\
     "rust_commands"\
@@ -226,12 +226,20 @@ then
     applications_list+=("signal")  
 fi
 
+## Update System
 echo ""
 update_system
+
+## Run Install Functions
 for f in ${!applications_list[@]}
 do
     echo ""
     confirm_install ${applications_list[$f]} install_${applications_list[$f]}
 done
+
+## Finish
+### Update System
 echo ""
 update_system
+### Run Finish Script
+../run_end.sh
