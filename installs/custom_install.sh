@@ -98,7 +98,7 @@ get_flatpak_preference() {
 }
 
 confirm_install() {
-    [[ "$(read -e -p "Install $1? [y/N]> "; echo $REPLY)" == [Yy]* ]] && $2 || echo "Skipping $1"
+    [[ "$(read -e -p "\e[0;1mInstall $1? [y/N]> "; echo $REPLY)" == [Yy]* ]] && $2 || echo "Skipping $1"
 }
 
 ### START
@@ -121,31 +121,31 @@ update_system() {
     echo $PKG_UPGRADE
     sudo $PKG_UPDATE
     sudo $PKG_UPGRADE
-    echo 'System Updated'
+    echo -e "\e[1;34mSystem Updated\e[0m"
 }
 
 install_rust() {
     curl --proto '=https' --tlsv1.2 -sSf hdnf install exattps://sh.rustup.rs | sh
-    echo 'Rust Installed'
+    echo -e "\e[1;34mRust Installed\e[0m"
 }
 
 install_rust_commands() {
     sudo $PKG_INSTALL -y tealdeer procs ripgrep bat fd-find
-    echo 'All Rust Commmands Installed'
+    echo -e "\e[1;34mAll Rust Commmands Installed\e[0m"
 }
 
 install_fish() {
     sudo $PKG_INSTALL -y fish
     sudo $PKG_INSTALL -y util-linux-user
     chsh -s /usr/bin/fish
-    echo 'Fish Installed'    
+    echo -e "\e[1;34mFish Installed\e[0m"
 }
 
 install_vscodium() {
     sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
     printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
     sudo $PKG_INSTALL -y codium 
-    echo 'VSCodium Installed'
+    echo -e "\e[1;34mVSCodium Installed\e[0m"
 }
 
 install_neovim() {
@@ -155,48 +155,48 @@ install_neovim() {
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     git clone https://gitlab.com/garzea/nvim.git
     sudo $PKG_INSTALL -y gcc
-    echo "Neovim Installed"
+    echo -e "\e[1;34mNeovim Installed\e[0m"
     echo "To apply all neovim configs, access ~/.config/nvim/lua/neovim/packer.lua and run :source and :PackerSync"
 }
 
 install_node() {
     sudo $PKG_INSTALL -y nodejs
-    echo 'NodeJS Installed'
+    echo -e "\e[1;34mNodeJS Installed\e[0m"
 }
 
 install_yarn() {
     sudo npm install --global yarn
-    echo 'Yarn Installed'
+    echo -e "\e[1;34mYarn Installed\e[0m"
 }
 
 install_xclip() {
     sudo $PKG_INSTALL -y xclip
-    echo 'Xclip Installed'
+    echo -e "\e[1;34mXclip Installed\e[0m"
 }
 
 install_neofetch() {
     sudo $PKG_INSTALL -y neofetch
-    echo 'Neofetch Installed'
+    echo -e "\e[1;34mNeofetch Installed\e[0m"
 }
 
 install_rpm_fusion() {
     sudo $PKG_INSTALL https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-    echo 'RPM Fusion Installed'
+    echo -e "\e[1;34mRPM Fusion Installed\e[0m"
 }
 
 install_flatpak() {
     sudo $PKG_INSTALL flatpak
-    echo 'Flatpak Installed'
+    echo -e "\e[1;34mFlatpak Installed\e[0m"
 }
 
 install_firefox() {
     flatpak install -y flathub org.mozilla.firefox
-    echo 'Firefox Installed'
+    echo -e "\e[1;34mFirefox Installed\e[0m"
 }
 
 install_signal() {
     flatpak install -y flathub org.signal.Signal
-    echo 'Signal Installed'
+    echo -e "\e[1;34mSignal Installed\e[0m"
 }
 
 ## Prepare Install
