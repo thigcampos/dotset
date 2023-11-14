@@ -47,7 +47,7 @@ DotSet provides two installation options:
 
 1. Clone the DotSet repository.
 2. Navigate to the DotSet directory in your terminal.
-3. Run the `initial_setup.sh` script.
+3. Run the `run_start.sh` script.
 4. Choose between a full or custom installation.
 5. Follow the prompts to complete the installation.
 
@@ -65,12 +65,12 @@ DotSet supports the following operating systems:
 
 ## Getting Started
 
-Clone this repository to get started with DotSet. Use the `initial_setup.sh` script to streamline the installation process.
+Clone this repository to get started with DotSet. Use the `run_start.sh` script to streamline the installation process.
 
 ```
 git clone https://github.com/thigcampos/dotset.git
 cd DotSet
-./initial_setup.sh
+./run_start.sh
 ```
 
 ## Contributors
